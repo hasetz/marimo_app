@@ -35,6 +35,7 @@ def _(mo, slider):
     import plotly.express as px
     import plotly.graph_objects as go
     import math
+    import pandas as pd
 
 
     def make_exponential_plot(lam, xmax=30, npts=400):
