@@ -30,7 +30,7 @@ def _():
 
 
 @app.cell(hide_code=True)
-def _(slider):
+def _(mo, slider):
     import numpy as np
     import plotly.express as px
     import plotly.graph_objects as go
@@ -84,7 +84,7 @@ def _(slider):
 
     exp_fig = make_exponential_plot( slider.value)
 
-    exp_fig.show()
+    mo.ui.plotly(exp_fig)
     return go, make_exponential_plot, math, np
 
 
@@ -109,7 +109,7 @@ def _(mo):
 
 
 @app.cell(hide_code=True)
-def _(gamma_k_slider, go, math, np, slider):
+def _(gamma_k_slider, go, math, mo, np, slider):
     def make_gamma_plot(k=3, lam=0.7, xmax=300, npts=600):
         """
         Create a Plotly figure for the Gamma(k, λ) density (time to k-th event),
@@ -154,7 +154,7 @@ def _(gamma_k_slider, go, math, np, slider):
 
     gamma_fig = make_gamma_plot(k=gamma_k_slider.value, lam=slider.value)
 
-    gamma_fig.show()
+    mo.ui.plotly(gamma_fig)
     return (make_gamma_plot,)
 
 
@@ -179,7 +179,7 @@ def _(mo):
 
 
 @app.cell(hide_code=True)
-def _(go, math, np, poisson_days_slider, slider):
+def _(go, math, mo, np, poisson_days_slider, slider):
     def make_poisson_plot(lam=0.7, period=8.0, k_max=None):
         """
         Create a Plotly figure for the Poisson(μ) PMF representing the
@@ -243,7 +243,7 @@ def _(go, math, np, poisson_days_slider, slider):
 
     poisson_fig = make_poisson_plot(lam=slider.value, period=poisson_days_slider.value)
 
-    poisson_fig.show()
+    mo.ui.plotly(poisson_fig)
     return (make_poisson_plot,)
 
 
