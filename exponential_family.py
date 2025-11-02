@@ -93,11 +93,6 @@ def _(mo, slider):
 
         fig.update_yaxes(rangemode="tozero")
 
-        fig.update_layout(
-            paper_bgcolor="rgba(0,0,0,0)",
-            plot_bgcolor="rgba(0,0,0,0)",
-        )
-
         return fig
 
     exp_fig = make_exponential_plot(slider.value)
@@ -164,9 +159,7 @@ def _(gamma_k_slider, go, math, mo, np, slider):
         fig.update_layout(
             title=f"Gamma(k={k}, λ={lam}) density",
             xaxis_title="x (time)",
-            yaxis_title="f(x)",
-            paper_bgcolor="rgba(0,0,0,0)",
-            plot_bgcolor="rgba(0,0,0,0)",
+            yaxis_title="f(x)"
         )
         fig.update_yaxes(rangemode="tozero")
 
@@ -255,9 +248,7 @@ def _(go, math, mo, np, poisson_days_slider, slider):
             title=f"Poisson counts within period (λ={lam}, t={period}, μ=λt={mu:.3f})",
             xaxis_title="k (number of events)",
             yaxis_title="P(N = k)",
-            bargap=0.15,
-            paper_bgcolor="rgba(0,0,0,0)",
-            plot_bgcolor="rgba(0,0,0,0)",
+            bargap=0.15
         )
         fig.update_yaxes(rangemode="tozero")
 
