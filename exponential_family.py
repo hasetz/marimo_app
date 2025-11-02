@@ -5,6 +5,8 @@ app = marimo.App(width="columns", css_file="custom.css")
 
 theme = marimo.ui.toggle(left_label="Light", right_label="Dark", value=True)
 
+import plotly.io as pio
+pio.templates.default = "plotly_dark"  # now every new fig is dark
 
 @app.cell
 async def _():
