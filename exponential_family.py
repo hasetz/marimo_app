@@ -91,6 +91,16 @@ def _(mo, slider):
                 annotation_position="top right"
             )
 
+        fig.update_layout(
+            font=dict(color="white"),
+            title_font=dict(color="white"),
+            legend_font=dict(color="white"),
+            xaxis=dict(title_font=dict(color="white"), tickfont=dict(color="white")),
+            yaxis=dict(title_font=dict(color="white"), tickfont=dict(color="white")),
+            paper_bgcolor="rgba(0,0,0,0)",
+            plot_bgcolor="rgba(0,0,0,0)",
+        )
+
         fig.update_yaxes(rangemode="tozero")
 
         return fig
@@ -161,6 +171,17 @@ def _(gamma_k_slider, go, math, mo, np, slider):
             xaxis_title="x (time)",
             yaxis_title="f(x)"
         )
+
+        fig.update_layout(
+            font=dict(color="white"),
+            title_font=dict(color="white"),
+            legend_font=dict(color="white"),
+            xaxis=dict(title_font=dict(color="white"), tickfont=dict(color="white")),
+            yaxis=dict(title_font=dict(color="white"), tickfont=dict(color="white")),
+            paper_bgcolor="rgba(0,0,0,0)",
+            plot_bgcolor="rgba(0,0,0,0)",
+        )
+
         fig.update_yaxes(rangemode="tozero")
 
         return fig
@@ -250,6 +271,17 @@ def _(go, math, mo, np, poisson_days_slider, slider):
             yaxis_title="P(N = k)",
             bargap=0.15
         )
+
+        fig.update_layout(
+            font=dict(color="white"),
+            title_font=dict(color="white"),
+            legend_font=dict(color="white"),
+            xaxis=dict(title_font=dict(color="white"), tickfont=dict(color="white")),
+            yaxis=dict(title_font=dict(color="white"), tickfont=dict(color="white")),
+            paper_bgcolor="rgba(0,0,0,0)",
+            plot_bgcolor="rgba(0,0,0,0)",
+        )
+
         fig.update_yaxes(rangemode="tozero")
 
         return fig
