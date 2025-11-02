@@ -4,6 +4,11 @@ __generated_with = "0.17.0"
 app = marimo.App(width="columns", css_file="custom.css")
 
 
+@app.cell
+async def _():
+    import micropip
+    await micropip.install("pandas==2.2.3")
+
 @app.cell(hide_code=True)
 def intro(mo):
     mo.md(
