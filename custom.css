@@ -1,0 +1,4 @@
+/* Make the output of the 'intro' cell span all columns */
+[data-cell-name='intro'] {
+  grid-column: 1 / -1;
+}
