@@ -3,6 +3,8 @@ import marimo
 __generated_with = "0.17.0"
 app = marimo.App(width="columns", css_file="custom.css")
 
+theme = marimo.ui.toggle(left_label="Light", right_label="Dark", value=True)
+
 
 @app.cell
 async def _():
@@ -86,9 +88,15 @@ def _(mo, slider):
             )
 
         fig.update_yaxes(rangemode="tozero")
+
+        fig.update_layout(
+            paper_bgcolor="rgba(0,0,0,0)",
+            plot_bgcolor="rgba(0,0,0,0)",
+        )
+
         return fig
 
-    exp_fig = make_exponential_plot( slider.value)
+    exp_fig = make_exponential_plot(slider.value)
 
     mo.ui.plotly(exp_fig)
     return go, make_exponential_plot, math, np
@@ -153,6 +161,8 @@ def _(gamma_k_slider, go, math, mo, np, slider):
             title=f"Gamma(k={k}, λ={lam}) density",
             xaxis_title="x (time)",
             yaxis_title="f(x)",
+            paper_bgcolor="rgba(0,0,0,0)",
+            plot_bgcolor="rgba(0,0,0,0)",
         )
         fig.update_yaxes(rangemode="tozero")
 
@@ -241,7 +251,9 @@ def _(go, math, mo, np, poisson_days_slider, slider):
             title=f"Poisson counts within period (λ={lam}, t={period}, μ=λt={mu:.3f})",
             xaxis_title="k (number of events)",
             yaxis_title="P(N = k)",
-            bargap=0.15
+            bargap=0.15,
+            paper_bgcolor="rgba(0,0,0,0)",
+            plot_bgcolor="rgba(0,0,0,0)",
         )
         fig.update_yaxes(rangemode="tozero")
 
